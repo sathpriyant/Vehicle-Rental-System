@@ -1,0 +1,121 @@
+
+###
+GET http://127.0.0.1:8000/owner/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/owner/
+Content-Type: application/json
+
+{
+    "owner_name": "Rahul",
+    "email": "rahul@gmail.com",
+    "phone": "9876543210",
+    "location": "Kochi"
+}
+
+###
+GET http://127.0.0.1:8000/owner/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/owner/1/
+Content-Type: application/json
+
+{
+    "owner_name": "Arun",
+    "email": "arun@gmail.com",
+    "phone": "9876543211",
+    "location": "Calicut"
+}
+
+###
+DELETE http://127.0.0.1:8000/owner/1/
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/vehicle/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/vehicle/
+Content-Type: application/json
+
+{
+    "owner": 1,
+    "vehicle_name": "Honda City",
+    "vehicle_number": "KL07AB1234",
+    "vehicle_type": "car",
+    "rent_per_day": 2000,
+    "is_available": true
+}
+
+###
+GET http://127.0.0.1:8000/vehicle/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/vehicle/1/
+Content-Type: application/json
+
+{
+    "owner": 1,
+    "vehicle_name": "Hyundai i20",
+    "vehicle_number": "KL07CD5678",
+    "vehicle_type": "car",
+    "rent_per_day": 2500,
+    "is_available": false
+}
+
+###
+DELETE http://127.0.0.1:8000/vehicle/1/
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/rental/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/rental/
+Content-Type: application/json
+
+{
+    "vehicle": 1,
+    "customer_name": "Akhil",
+    "start_date": "2026-11-05",
+    "end_date": "2026-11-08",
+    "total_amount": 6000,
+    "status": "Confirmed"
+}
+
+###
+GET http://127.0.0.1:8000/rental/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/rental/1/
+Content-Type: application/json
+
+{
+    "vehicle": 1,
+    "customer_name": "Akhil",
+    "start_date": "2026-11-05",
+    "end_date": "2026-11-10",
+    "total_amount": 10000,
+    "status": "Completed"
+}
+
+###
+DELETE http://127.0.0.1:8000/rental/1/
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/owner/1/vehicles/
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/vehicle/1/rentals/
+Accept: application/json
